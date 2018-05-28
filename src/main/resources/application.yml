@@ -1,0 +1,82 @@
+# SPRING CORE
+spring:
+  application:
+    name: kotlin with spring-boot 2.0
+# OUTPUT
+  output:
+    ansi:
+      enabled: detect
+# PROFILES
+  profiles:
+    active: dev
+# DATASOURCE
+  datasource:
+    url: jdbc:mysql://localhost:3306/ih4c
+    username: root
+    password:
+    hikari:
+      connection-test-query: select 1
+      connection-timeout: 10000
+      maximum-pool-size: 2
+      minimum-idle: 2
+  jpa:
+    open-in-view: true
+    properties:
+      hibernate:
+        show_sql: true
+        format_sql: true
+        use_sql_comments: true
+        generate_statistics: false
+  jackson:
+    serialization:
+      indent_output: true
+      write-dates-as-timestamps: false
+      write-durations-as-timestamps: true
+  devtools:
+    livereload:
+      enabled: false
+    restart:
+      enabled: true
+      log-condition-evaluation-delta: true
+
+# EMBEDDED SERVER CONFIGURATION
+server:
+  servlet:
+    context-path: /app
+  port: 9000
+
+
+logging.file: demo.log
+logging:
+  file:
+    max-size: 50MB
+    max-history: 10
+  level:
+    root: info
+    org.springframework: info
+#    org.springframework.orm.jpa.JpaTransactionManager: debug
+#    org.springframework.transaction: trace
+    org.hibernate: info
+    org.hibernate.SQL: debug
+#    org.hibernate.type.descriptor.sql.BasicBinder: trace
+#    org.hibernate.transaction: debug
+#    org.hibernate.jpa.internal: debug
+#    org.hibernate.event.internal: debug
+#    org.hibernate.engine.transaction.internal: debug
+#    org.hibernate.internal.util: debug
+    com.example.demo: debug
+
+my-app:
+  my-module:
+    foo:
+      name: dummy
+      min-height: 100
+      max-height: 999
+      color: green
+      colors:
+        - red
+        - green
+        - blue
+      budget: 150
+      parts:
+upper: TRUE
